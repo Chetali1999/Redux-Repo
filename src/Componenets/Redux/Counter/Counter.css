@@ -1,18 +1,20 @@
 
 .increament-btn {
     background-color: green;
-    padding: 8px 8px;
+    padding: 10px 10px;
     border-radius: 4px;
     color: #fff;
     letter-spacing:2px;
     cursor: pointer;
+    margin: 0 12px;
 }
 
 .decreament-btn {
     background-color: red;
-    padding: 8px 8px;
+    padding: 10px 10px;
     border-radius: 4px;
     color: #fff;
     letter-spacing: 2px;
     cursor: pointer;
+    margin: 0 12px;
 }
