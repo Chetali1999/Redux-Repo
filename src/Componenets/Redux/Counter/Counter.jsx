@@ -14,7 +14,7 @@ const Counter = () => {
         <>
             <div>
                 <h5>Counter Application</h5>
-                <button onClick={() => dispatch(Increament())} className="increament-btn">Increament</button><span>{counter}</span><button onClick={() => dispatch(Decreament())} className="decreament-btn">Decreament</button>
+                <button onClick={() => dispatch(Decreament())} className="decreament-btn">Decreament</button><span>{counter}</span><button onClick={() => dispatch(Increament())} className="increament-btn">Increament</button>
             </div>
         </>
     )
