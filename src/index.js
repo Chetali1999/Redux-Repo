@@ -4,21 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { configureStore } from "@reduxjs/toolkit";
-import { counterReducer } from './Componenets/Redux/CounterReducer';
+import { createStore, combineReducers } from 'redux';
+import { counterReducer } from "./Componenets/Redux/CounterReducer"
 
-const store = configureStore({
-  reducer: {
-    counter: counterReducer
-  }
-})
+// Combine reducers if there are multiple (optional for a single reducer)
+const rootReducer = combineReducers({
+  counter: counterReducer,
+});
+
+// Create the Redux store
+const store = createStore(rootReducer);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store} >
+    <Provider store={store}>
       <App />
-    </Provider >
+    </Provider>
   </React.StrictMode>
 );
 
