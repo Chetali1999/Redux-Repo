@@ -1,12 +1,8 @@
 
-export function Increament() {
-    return {
-        type: 'INCREAMENT'
-    }
-}
+export const Increment = () => ({
+    type: 'INCREAMENT',
+});
 
-export function Decreament() {
-    return {
-        type: 'DECREAMENT'
-    }
-}
+export const Decrement = () => ({
+    type: 'DECREAMENT',
+});

@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
-import { counterReducer } from "./Componenets/Redux/CounterReducer"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { Provider } from "react-redux";
+import { combineReducers, createStore } from "redux";
 
-// Combine reducers if there are multiple (optional for a single reducer)
+import App from "./App";
+import { counterReducer } from "../src/Componenets/Redux/CounterReducer";
+
+// Combine reducers (ensure it's `combineReducers`)
 const rootReducer = combineReducers({
   counter: counterReducer,
 });
@@ -15,17 +15,12 @@ const rootReducer = combineReducers({
 // Create the Redux store
 const store = createStore(rootReducer);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
+// Render the application
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
